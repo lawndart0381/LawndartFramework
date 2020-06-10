@@ -1,12 +1,13 @@
 import XCTest
+import SwiftUI
 @testable import LawndartFramework
 
 final class LawndartFrameworkTests: XCTestCase {
+    @State var text: String = ""
     func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        XCTAssertEqual(LawndartFramework().text, "Hello, World!")
+        var body: some View {
+            LawndartFramework.MainTextField(placeholder: "Testing", text: $text)
+        }
     }
 
     static var allTests = [
